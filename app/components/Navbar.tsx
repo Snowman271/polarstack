@@ -100,13 +100,13 @@ export default function Navbar() {
               : "bg-transparent"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between h-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between h-16">
 
             {/* Logo */}
             <a
               href="#hero"
               onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
-              className="flex items-center gap-0.5 transition-transform duration-200 hover:scale-105"
+              className="flex items-center transition-transform duration-200 hover:scale-105" style={{ gap: '0.2rem' }}
             >
               <div className="w-12 h-12 flex-shrink-0">
                 <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={48} height={48} className="w-full h-full object-contain" />
