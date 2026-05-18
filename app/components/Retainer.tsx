@@ -49,7 +49,7 @@ export default function Retainer() {
             </div>
 
             <div className="mt-6 inline-flex items-center gap-3 px-4 py-3 rounded-xl border border-[rgba(61,220,176,0.25)] bg-[rgba(61,220,176,0.05)] max-w-full">
-              <div className="w-2 h-2 rounded-full bg-[#3DDCB0] animate-pulse flex-shrink-0" />
+              <div className="hidden sm:block w-2 h-2 rounded-full bg-[#3DDCB0] animate-pulse flex-shrink-0" />
               <span className="text-sm text-[#3DDCB0] font-medium">
                 Start today · first month free with any project
               </span>

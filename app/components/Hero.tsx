@@ -56,7 +56,7 @@ export default function Hero() {
                 {...fadeUp(0)}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[rgba(61,220,176,0.2)] bg-[rgba(61,220,176,0.05)] text-xs text-[#3DDCB0] font-medium tracking-widest uppercase max-w-full"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#3DDCB0] animate-pulse flex-shrink-0" />
+                <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#3DDCB0] animate-pulse flex-shrink-0" />
                 <span>Free homepage · try before you commit</span>
               </motion.div>
 

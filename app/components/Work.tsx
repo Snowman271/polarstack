@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Wifi } from "lucide-react";
 import Image from "next/image";
@@ -60,7 +60,16 @@ export default function Work() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [activeIdx, setActiveIdx] = useState(0);
+  const [mobileActive, setMobileActive] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const active = projects[activeIdx];
+
+  const handleCarouselScroll = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const index = Math.round(el.scrollLeft / el.offsetWidth);
+    setMobileActive(Math.min(index, projects.length - 1));
+  }, []);
 
   return (
     <section id="work" className="relative py-20 lg:py-32">
@@ -298,14 +307,14 @@ export default function Work() {
 
         {/* ── Mobile: swipe carousel ── */}
         <div className="lg:hidden">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4" style={{ scrollbarWidth: "none" }}>
+          <div ref={carouselRef} onScroll={handleCarouselScroll} className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4" style={{ scrollbarWidth: "none" }}>
             {projects.map((project, i) => (
               <motion.div
                 key={project.index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex-shrink-0 w-[85vw] snap-start glass rounded-2xl overflow-hidden"
+                className="flex-shrink-0 w-full snap-start glass rounded-2xl overflow-hidden"
                 style={{ border: `1px solid ${project.accent}25` }}
               >
                 {/* Browser chrome */}
@@ -365,9 +374,16 @@ export default function Work() {
             ))}
           </div>
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-1">
+          <div className="flex justify-center gap-2 mt-3">
             {projects.map((p, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.2)" }} />
+              <div
+                key={i}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  width: i === mobileActive ? "20px" : "6px",
+                  background: i === mobileActive ? p.accent : "rgba(255,255,255,0.2)",
+                }}
+              />
             ))}
           </div>
         </div>
