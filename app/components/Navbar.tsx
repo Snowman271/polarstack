@@ -112,7 +112,7 @@ export default function Navbar() {
                 <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={48} height={48} className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-semibold text-white tracking-tight text-[15px]">
-                Pol<span className="gradient-text">∧</span>r<span className="gradient-text">St∧ck</span>
+                Polar<span className="gradient-text">Stack</span>
               </span>
             </a>
 
