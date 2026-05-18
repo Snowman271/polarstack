@@ -12,8 +12,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Polar Stack Contact <info@polarstack.com>",
-      to: process.env.CONTACT_EMAIL ?? "hello@polarstack.dev",
+      from: "Polar Stack Contact <info@polar-stack.com>",
+      to: process.env.CONTACT_EMAIL ?? "info@polar-stack.com",
       replyTo: email,
       subject: `New project inquiry from ${name}`,
       html: `
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
           </div>
 
           <div style="color: #475569; font-size: 12px; text-align: center;">
-            Sent via polarstack.dev contact form
+            Sent via polar-stack.com contact form
           </div>
         </div>
       `,

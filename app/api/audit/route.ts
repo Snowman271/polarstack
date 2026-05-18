@@ -24,8 +24,8 @@ export async function POST(request: NextRequest) {
     const subjectTag = isDecisionMaker ? "🔥 Decision Maker" : "📋 Standard";
 
     const { error } = await resend.emails.send({
-      from: "Polar Stack Audits <audits@polarstack.dev>",
-      to: process.env.CONTACT_EMAIL ?? "hello@polarstack.dev",
+      from: "Polar Stack Audits <info@polar-stack.com>",
+      to: process.env.CONTACT_EMAIL ?? "info@polar-stack.com",
       replyTo: email,
       subject: `${subjectTag} - Free Audit Request from ${name} (${position})`,
       html: `
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
           </div>
 
           <div style="margin-top: 28px; color: #475569; font-size: 12px; text-align: center;">
-            Submitted via polarstack.dev free audit form
+            Submitted via polar-stack.com free audit form
           </div>
         </div>
       `,
