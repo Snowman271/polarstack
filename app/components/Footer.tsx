@@ -37,7 +37,7 @@ export default function Footer() {
               <div className="w-10 h-10 flex-shrink-0">
                 <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={40} height={40} className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-semibold text-white tracking-tight">
+              <span className="font-display font-semibold text-white" style={{ letterSpacing: '0.12em' }}>
                 POLΛR <span className="gradient-text">STΛCK</span> LLC
               </span>
             </a>

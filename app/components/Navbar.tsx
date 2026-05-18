@@ -111,7 +111,7 @@ export default function Navbar() {
               <div className="w-12 h-12 flex-shrink-0">
                 <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={48} height={48} className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-semibold text-white tracking-tight text-[15px]">
+              <span className="font-display font-semibold text-white text-[15px]" style={{ letterSpacing: '0.12em' }}>
                 POLΛR <span className="gradient-text">STΛCK</span>
               </span>
             </a>
