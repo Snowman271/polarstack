@@ -76,29 +76,26 @@ export default function Retainer() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="glass rounded-2xl p-5 sm:p-8"
           >
-            <div className="text-sm font-medium text-slate-400 mb-6 uppercase tracking-widest">
+            <div className="text-xs font-medium text-slate-500 mb-5 uppercase tracking-widest">
               What&apos;s included
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {features.map((feature, i) => (
                 <motion.li
                   key={feature}
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.06, duration: 0.5 }}
-                  className="flex items-start gap-3"
+                  className="flex items-center gap-3"
                 >
-                  <div className="w-5 h-5 rounded-full bg-[rgba(61,220,176,0.12)] border border-[rgba(61,220,176,0.25)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check size={11} className="text-[#3DDCB0]" />
-                  </div>
+                  <Check size={13} className="text-[#3DDCB0] flex-shrink-0" />
                   <span className="text-slate-300 text-sm">{feature}</span>
                 </motion.li>
               ))}
             </ul>
 
-            <div className="mt-8 pt-6 border-t border-[rgba(61,220,176,0.1)] flex items-center gap-3 text-xs text-slate-400">
+            <div className="mt-8 flex items-center gap-2 text-xs text-slate-500">
               <div className="w-1.5 h-1.5 rounded-full bg-[#3DDCB0]" />
               Cancel anytime. No lock-in after the free period.
             </div>

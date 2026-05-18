@@ -60,7 +60,6 @@ export default function Work() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [activeIdx, setActiveIdx] = useState(0);
-  const [mobileOpen, setMobileOpen] = useState<number | null>(null);
   const active = projects[activeIdx];
 
   return (
@@ -297,95 +296,80 @@ export default function Work() {
           </motion.div>
         </div>
 
-        {/* ── Mobile: expandable list ── */}
-        <div className="lg:hidden space-y-3">
-          {projects.map((project, i) => {
-            const isOpen = mobileOpen === i;
-            return (
+        {/* ── Mobile: swipe carousel ── */}
+        <div className="lg:hidden">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4" style={{ scrollbarWidth: "none" }}>
+            {projects.map((project, i) => (
               <motion.div
                 key={project.index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="glass rounded-2xl overflow-hidden transition-all duration-300"
-                style={{ border: `1px solid ${isOpen ? project.accent + "30" : "rgba(61,220,176,0.08)"}` }}
+                className="flex-shrink-0 w-[85vw] snap-start glass rounded-2xl overflow-hidden"
+                style={{ border: `1px solid ${project.accent}25` }}
               >
-                <button
-                  onClick={() => setMobileOpen(isOpen ? null : i)}
-                  className="w-full flex items-center gap-4 px-5 py-4 text-left"
-                >
-                  <span
-                    className="font-display font-black text-3xl leading-none flex-shrink-0 transition-colors duration-300"
-                    style={{ color: isOpen ? project.accent : "rgba(255,255,255,0.1)" }}
-                  >
-                    {project.index}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-slate-500">{project.category}</div>
-                    <div className="font-display font-bold text-white text-base mt-0.5">{project.title}</div>
+                {/* Browser chrome */}
+                <div className="bg-[#0d1117] px-4 py-2.5 flex items-center gap-3 border-b border-[rgba(255,255,255,0.05)]">
+                  <div className="flex gap-1.5 flex-shrink-0">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57] opacity-70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e] opacity-70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#28c840] opacity-70" />
                   </div>
-                  <motion.div
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex-shrink-0"
-                    style={{ color: isOpen ? project.accent : "#475569" }}
+                  <div className="flex-1 bg-[rgba(255,255,255,0.04)] rounded-md px-3 py-1 text-xs text-slate-500 font-mono truncate">
+                    {project.href.replace("https://", "").replace("www.", "")}
+                  </div>
+                  <span className="text-[10px] font-mono font-semibold flex-shrink-0" style={{ color: project.accent }}>LIVE</span>
+                </div>
+
+                {/* Screenshot */}
+                <div className="relative h-44 bg-[#060d14]">
+                  <Image
+                    src={`https://api.microlink.io/?url=${encodeURIComponent(project.href)}&screenshot=true&meta=false&embed=screenshot.url`}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+
+                {/* Info */}
+                <div className="px-4 pt-4 pb-3">
+                  <div className="text-[10px] font-mono uppercase tracking-widest mb-1" style={{ color: `${project.accent}99` }}>{project.category}</div>
+                  <h3 className="font-display font-bold text-white text-lg leading-tight">{project.title}</h3>
+                  <p className="text-slate-400 text-xs mt-1.5 leading-relaxed">{project.description}</p>
+                </div>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-3" style={{ borderTop: `1px solid ${project.accent}18` }}>
+                  {project.metrics.map((m, j) => (
+                    <div key={m.label} className="py-3 text-center" style={{ borderRight: j < 2 ? `1px solid ${project.accent}18` : "none" }}>
+                      <div className="font-mono font-bold text-base leading-none" style={{ color: project.accent }}>{m.value}</div>
+                      <div className="text-[10px] text-slate-500 font-mono mt-0.5 uppercase tracking-wide">{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Visit button */}
+                <div className="px-4 py-3" style={{ borderTop: `1px solid ${project.accent}18` }}>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold text-[#080C10] active:opacity-80"
+                    style={{ background: `linear-gradient(135deg, ${project.accent}, ${project.accent}bb)` }}
                   >
-                    <ArrowUpRight size={16} />
-                  </motion.div>
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0 }}
-                      animate={{ height: "auto" }}
-                      exit={{ height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="relative h-48" style={{ borderTop: `1px solid ${project.accent}18` }}>
-                        <Image
-                          src={`https://api.microlink.io/?url=${encodeURIComponent(project.href)}&screenshot=true&meta=false&embed=screenshot.url`}
-                          alt={project.title}
-                          fill
-                          className="object-cover object-top"
-                          unoptimized
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-3" style={{ borderTop: `1px solid ${project.accent}18` }}>
-                        {project.metrics.map((m, j) => (
-                          <div
-                            key={m.label}
-                            className="py-3 text-center"
-                            style={{ borderRight: j < 2 ? `1px solid ${project.accent}18` : "none" }}
-                          >
-                            <div className="font-mono font-bold text-lg leading-none" style={{ color: project.accent }}>{m.value}</div>
-                            <div className="text-[10px] text-slate-500 font-mono mt-1 uppercase tracking-wide">{m.label}</div>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="px-5 py-4" style={{ borderTop: `1px solid ${project.accent}18` }}>
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold text-[#080C10] transition-opacity active:opacity-80"
-                          style={{
-                            background: `linear-gradient(135deg, ${project.accent} 0%, ${project.accent}bb 100%)`,
-                            boxShadow: `0 0 24px ${project.accent}40`,
-                          }}
-                        >
-                          Visit Live Site <ArrowUpRight size={15} />
-                        </a>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    Visit Live Site <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-1">
+            {projects.map((p, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.2)" }} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

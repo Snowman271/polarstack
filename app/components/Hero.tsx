@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Star, Quote } from "lucide-react";
 import HeroVisual from "./HeroVisual";
 import AuroraBackground from "./AuroraBackground";
@@ -21,6 +21,14 @@ const fadeUp = (delay: number) => ({
 
 export default function Hero() {
   const [auditOpen, setAuditOpen] = useState(false);
+  const [activeReview, setActiveReview] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveReview((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -122,11 +130,43 @@ export default function Hero() {
               ))}
               <span className="ml-2 text-xs text-slate-500 font-mono">5.0 · verified clients</span>
             </div>
-            <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:overflow-visible md:pb-0 -mx-5 px-5 md:mx-0 md:px-0">
+
+            {/* Mobile: auto-rotating single review */}
+            <div className="md:hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeReview}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex flex-col items-center gap-2 px-5 py-5 rounded-xl border border-[rgba(61,220,176,0.08)] bg-[rgba(61,220,176,0.02)] text-center"
+                >
+                  <Quote size={14} className="text-[rgba(61,220,176,0.4)] flex-shrink-0" />
+                  <p className="text-sm text-slate-400 leading-relaxed">{reviews[activeReview].quote}</p>
+                  <span className="text-[11px] text-slate-600 font-medium mt-1">
+                    {reviews[activeReview].name} · {reviews[activeReview].company}
+                  </span>
+                </motion.div>
+              </AnimatePresence>
+              <div className="flex justify-center gap-2 mt-3">
+                {reviews.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveReview(i)}
+                    className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                    style={{ background: i === activeReview ? "#3DDCB0" : "rgba(255,255,255,0.15)" }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop: all 3 side by side */}
+            <div className="hidden md:grid md:grid-cols-3 gap-4">
               {reviews.map((review, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-[rgba(61,220,176,0.08)] bg-[rgba(61,220,176,0.02)] text-center flex-shrink-0 w-[80vw] md:w-auto snap-start"
+                  className="flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-[rgba(61,220,176,0.08)] bg-[rgba(61,220,176,0.02)] text-center"
                 >
                   <Quote size={14} className="text-[rgba(61,220,176,0.4)] flex-shrink-0" />
                   <p className="text-xs text-slate-400 leading-relaxed">{review.quote}</p>
