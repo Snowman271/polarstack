@@ -14,14 +14,6 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const IglooLogo = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M2 11 Q2 2.5 8 2.5 Q14 2.5 14 11Z" fill="white"/>
-    <path d="M5.5 11 Q5.5 7.8 8 7.8 Q10.5 7.8 10.5 11Z" fill="rgba(8,12,16,0.35)"/>
-    <path d="M3.5 8.5 Q5.5 6.8 8 6.8 Q10.5 6.8 12.5 8.5" stroke="rgba(8,12,16,0.12)" strokeWidth="0.7" fill="none"/>
-    <rect x="1" y="11" width="14" height="2.2" rx="1.1" fill="white"/>
-  </svg>
-);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
