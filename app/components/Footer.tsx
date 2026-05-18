@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, MessageSquare, Rss } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -32,17 +33,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 gap-10 items-start mb-10">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-            <a href="#hero" onClick={(e) => { e.preventDefault(); scrollTo("#hero"); }} className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3DDCB0] to-[#00B4D8] flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M2 11 Q2 2.5 8 2.5 Q14 2.5 14 11Z" fill="white"/>
-                  <path d="M5.5 11 Q5.5 7.8 8 7.8 Q10.5 7.8 10.5 11Z" fill="rgba(8,12,16,0.35)"/>
-                  <path d="M3.5 8.5 Q5.5 6.8 8 6.8 Q10.5 6.8 12.5 8.5" stroke="rgba(8,12,16,0.12)" strokeWidth="0.7" fill="none"/>
-                  <rect x="1" y="11" width="14" height="2.2" rx="1.1" fill="white"/>
-                </svg>
+            <a href="#hero" onClick={(e) => { e.preventDefault(); scrollTo("#hero"); }} className="flex items-center" style={{ gap: '0.2rem' }}>
+              <div className="w-10 h-10 flex-shrink-0">
+                <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={40} height={40} className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-semibold text-white tracking-tight">
-                Polar<span className="gradient-text">Stack</span> LLC
+                POLΛR <span className="gradient-text">STΛCK</span> LLC
               </span>
             </a>
             <p className="text-slate-400 text-sm max-w-[220px] leading-relaxed">
