@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Lightbulb, ArrowRight } from "lucide-react";
 import AuditModal from "./AuditModal";
@@ -115,8 +116,8 @@ export default function Navbar() {
               onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
               className="flex items-center gap-3"
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3DDCB0] to-[#00B4D8] flex items-center justify-center flex-shrink-0">
-                <IglooLogo />
+              <div className="w-8 h-8 flex-shrink-0">
+                <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={32} height={32} className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-semibold text-white tracking-tight text-[15px]">
                 Polar<span className="gradient-text">Stack</span>
