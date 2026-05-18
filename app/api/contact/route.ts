@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Polar Stack Contact <contact@polarstack.dev>",
+      from: "Polar Stack Contact <info@polarstack.com>",
       to: process.env.CONTACT_EMAIL ?? "hello@polarstack.dev",
       replyTo: email,
       subject: `New project inquiry from ${name}`,
