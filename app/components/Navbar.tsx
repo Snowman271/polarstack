@@ -106,7 +106,7 @@ export default function Navbar() {
             <a
               href="#hero"
               onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
-              className="flex items-center gap-1 transition-transform duration-200 hover:scale-105"
+              className="flex items-center gap-0.5 transition-transform duration-200 hover:scale-105"
             >
               <div className="w-12 h-12 flex-shrink-0">
                 <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={48} height={48} className="w-full h-full object-contain" />
