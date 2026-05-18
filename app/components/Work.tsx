@@ -87,7 +87,7 @@ export default function Work() {
           className="mb-12 lg:mb-16 text-center lg:text-left"
         >
           <span className="text-xs font-medium text-[#3DDCB0] tracking-widest uppercase font-mono">
-            // Selected work
+            {'// Selected work'}
           </span>
           <h2 className="mt-3 font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
             What we&apos;ve built
