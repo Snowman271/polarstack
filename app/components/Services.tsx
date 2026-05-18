@@ -90,7 +90,7 @@ export default function Services() {
   const addons = services.slice(1);
 
   return (
-    <section id="services" className="relative py-20 lg:py-32 px-5 sm:px-6 lg:px-12">
+    <section id="services" className="relative py-14 lg:py-32 px-5 sm:px-6 lg:px-12">
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px"
         style={{
@@ -243,7 +243,7 @@ export default function Services() {
                 transition={{ delay: 0.1 + i * 0.07, duration: 0.6 }}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="service-addon-card glass rounded-2xl p-6 flex flex-col gap-5 relative overflow-hidden cursor-default transition-all duration-300"
+                className="service-addon-card glass rounded-2xl p-4 md:p-6 flex flex-col gap-3 md:gap-5 relative overflow-hidden cursor-default transition-all duration-300"
                 style={{
                   borderColor: isRainbow ? "transparent" : (isHovered ? `${c}40` : undefined),
                   boxShadow: isRainbow ? "0 0 40px rgba(168,85,247,0.2)" : (isHovered ? `0 0 30px ${c}18` : undefined),
@@ -263,14 +263,14 @@ export default function Services() {
                   >
                     <Icon size={20} style={{ color: isRainbow ? "#a855f7" : (isHovered ? c : "#3DDCB0") }} className="transition-colors duration-300" />
                   </div>
-                  <span className="px-2.5 py-1 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)] text-slate-400 text-xs font-medium">
+                  <span className="hidden md:block px-2.5 py-1 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)] text-slate-400 text-xs font-medium">
                     Add-on
                   </span>
                 </div>
 
                 <div className="flex-1">
                   <h3
-                    className="font-display font-semibold text-lg mb-2 transition-all duration-300"
+                    className="font-display font-semibold text-sm md:text-lg mb-1 md:mb-2 transition-all duration-300"
                     style={isRainbow ? {
                       backgroundImage: RAINBOW,
                       WebkitBackgroundClip: "text",
@@ -280,12 +280,12 @@ export default function Services() {
                   >
                     {service.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
+                  <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5">
+                <div className="hidden md:flex flex-wrap gap-1.5">
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
@@ -305,7 +305,7 @@ export default function Services() {
           };
 
           return (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {addons.map((service, i) => renderAddon(service, i))}
             </div>
           );

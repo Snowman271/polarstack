@@ -20,7 +20,7 @@ export default function Retainer() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="retainer" className="relative py-20 lg:py-32 px-5 sm:px-6 lg:px-12">
+    <section id="retainer" className="relative py-14 lg:py-32 px-5 sm:px-6 lg:px-12">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

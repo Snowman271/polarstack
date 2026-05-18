@@ -122,11 +122,11 @@ export default function Hero() {
               ))}
               <span className="ml-2 text-xs text-slate-500 font-mono">5.0 · verified clients</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:overflow-visible md:pb-0 -mx-5 px-5 md:mx-0 md:px-0">
               {reviews.map((review, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-[rgba(61,220,176,0.08)] bg-[rgba(61,220,176,0.02)] text-center"
+                  className="flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-[rgba(61,220,176,0.08)] bg-[rgba(61,220,176,0.02)] text-center flex-shrink-0 w-[80vw] md:w-auto snap-start"
                 >
                   <Quote size={14} className="text-[rgba(61,220,176,0.4)] flex-shrink-0" />
                   <p className="text-xs text-slate-400 leading-relaxed">{review.quote}</p>

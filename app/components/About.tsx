@@ -27,7 +27,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="relative py-20 lg:py-32 px-5 sm:px-6 lg:px-12">
+    <section id="about" className="relative py-14 lg:py-32 px-5 sm:px-6 lg:px-12">
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px"
         style={{
