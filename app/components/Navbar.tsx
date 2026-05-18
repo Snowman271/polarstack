@@ -108,8 +108,8 @@ export default function Navbar() {
               onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
               className="flex items-center transition-transform duration-200 hover:scale-105" style={{ gap: '0.2rem' }}
             >
-              <div className="w-12 h-12 flex-shrink-0">
-                <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={48} height={48} className="w-full h-full object-contain" />
+              <div className="w-14 h-14 flex-shrink-0">
+                <Image src="/polarstack-logo.png" alt="Polar Stack logo" width={56} height={56} className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-semibold text-white text-[15px]" style={{ letterSpacing: '0.5em' }}>
                 POLΛR <span className="gradient-text">STΛCK</span>
