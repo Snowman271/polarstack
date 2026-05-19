@@ -159,57 +159,32 @@ export default function HeroVisual() {
                 </div>
               </div>
 
-              {/* Hero */}
-              <div className="flex gap-4 px-5 pt-5 pb-4" style={{ background: "#f7f4ef" }}>
-                <div className="flex-1 space-y-3">
-                  <div style={{ fontSize: "0.52rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                    New arrivals · Spring 2025
+              {/* Hero — full-width image layout */}
+              <div className="relative" style={{ background: "#f7f4ef" }}>
+                <div className="relative w-full overflow-hidden" style={{ height: "160px" }}>
+                  <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(247,244,239,0.92) 38%, transparent 75%)" }} />
+                  <div className="absolute inset-0 flex flex-col justify-center px-5 gap-2">
+                    <div style={{ fontSize: "0.48rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                      New arrivals · Spring 2025
+                    </div>
+                    <h2 className="font-bold" style={{ fontSize: "0.95rem", lineHeight: 1.2, color: "#0f1f14" }}>
+                      Plants that<br />
+                      <span style={{ color: "#3a7d55" }}>
+                        {typed}
+                        <span style={{ display: "inline-block", width: "1px", height: "0.9em", background: "#3a7d55", marginLeft: "1px", verticalAlign: "text-bottom", animation: "blink 1s step-end infinite" }} />
+                      </span>
+                    </h2>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="font-semibold text-white" style={{ background: "#1a2e20", fontSize: "0.52rem", borderRadius: "4px", padding: "4px 9px" }}>
+                        Shop Now
+                      </span>
+                      <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
+                    </div>
                   </div>
-                  <h2 className="font-bold leading-tight" style={{ fontSize: "1.05rem", lineHeight: 1.2, color: "#0f1f14" }}>
-                    Plants that make<br />
-                    <span style={{ color: "#3a7d55" }}>
-                      {typed}
-                      <span
-                        style={{
-                          display: "inline-block",
-                          width: "1px",
-                          height: "0.9em",
-                          background: "#3a7d55",
-                          marginLeft: "1px",
-                          verticalAlign: "text-bottom",
-                          animation: "blink 1s step-end infinite",
-                        }}
-                      />
-                    </span>
-                  </h2>
-                  <p style={{ fontSize: "0.57rem", color: "#6b7e6f", lineHeight: 1.6, maxWidth: "92%" }}>
-                    Curated indoor &amp; outdoor plants, delivered fresh from our Oregon greenhouses.
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="font-semibold text-white"
-                      style={{ background: "#1a2e20", fontSize: "0.57rem", borderRadius: "5px", padding: "5px 11px", letterSpacing: "0.04em" }}
-                    >
-                      View Collection
-                    </span>
-                    <span style={{ color: "#3a7d55", fontSize: "0.55rem", borderBottom: "1px solid #3a7d5580", paddingBottom: "1px" }}>
-                      200+ varieties
-                    </span>
-                  </div>
-                </div>
-
-                {/* Product card */}
-                <div
-                  className="flex-shrink-0 rounded-xl overflow-hidden"
-                  style={{ width: "150px", border: "1px solid #d8e8dc" }}
-                >
-                  <div className="relative rounded-t-xl overflow-hidden" style={{ height: "80px" }}>
-                    <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
-                  </div>
-                  <div style={{ background: "white", padding: "7px 8px" }}>
-                    <div className="font-semibold" style={{ fontSize: "0.55rem", color: "#0f1f14", lineHeight: 1.3 }}>Afterglow Echeveria</div>
-                    <div style={{ fontSize: "0.5rem", color: "#8a9e8e", marginTop: "2px" }}>Full sun · Drought tolerant</div>
-                    <div className="font-bold" style={{ fontSize: "0.65rem", color: "#1a2e20", marginTop: "4px" }}>$28</div>
+                  <div className="absolute bottom-2 right-3 text-right">
+                    <div className="font-semibold" style={{ fontSize: "0.52rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>Afterglow Echeveria</div>
+                    <div className="font-bold" style={{ fontSize: "0.6rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>$28</div>
                   </div>
                 </div>
               </div>
