@@ -181,7 +181,7 @@ export default function HeroVisual() {
                     <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
                   </div>
                 </div>
-                <div className="absolute bottom-2 right-3 text-right">
+                <div className="absolute bottom-2 right-8 text-right">
                   <div className="font-semibold" style={{ fontSize: "0.52rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>Afterglow Echeveria</div>
                   <div className="font-bold" style={{ fontSize: "0.6rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>$28</div>
                 </div>
