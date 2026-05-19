@@ -140,37 +140,40 @@ export default function HeroVisual() {
               {/* Nav */}
               <div
                 className="flex items-center justify-between px-5 py-3"
-                style={{ background: "#1f3d2b", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+                style={{ background: "#1a2e20", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
               >
-                <span className="font-bold tracking-tight" style={{ fontSize: "0.72rem", color: "#e8f5e9", letterSpacing: "0.05em" }}>
-                  🌿 Verdant
+                <span style={{ fontSize: "0.72rem", color: "#e8f5e9", letterSpacing: "0.18em", fontWeight: 700 }}>
+                  VERDANT
                 </span>
-                <div className="flex items-center gap-4" style={{ color: "#a8c5a0" }}>
+                <div className="flex items-center gap-4" style={{ color: "#7aab8a", fontSize: "0.58rem" }}>
                   <span>Shop</span>
-                  <span>Care Guides</span>
+                  <span>Journal</span>
                   <span>About</span>
                   <span
-                    className="font-semibold px-2.5 py-1 rounded-full text-white"
-                    style={{ background: "#4a9b6f", fontSize: "0.6rem" }}
+                    className="font-semibold text-white"
+                    style={{ background: "#3a7d55", fontSize: "0.55rem", borderRadius: "4px", padding: "4px 9px", letterSpacing: "0.04em" }}
                   >
-                    Order Now
+                    Shop Now
                   </span>
                 </div>
               </div>
 
               {/* Hero */}
-              <div className="flex gap-4 px-5 pt-5 pb-4" style={{ background: "#f5f0e8" }}>
+              <div className="flex gap-4 px-5 pt-5 pb-4" style={{ background: "#f7f4ef" }}>
                 <div className="flex-1 space-y-3">
-                  <h2 className="font-bold leading-tight" style={{ fontSize: "1.05rem", lineHeight: 1.25, color: "#1a2e1f" }}>
+                  <div style={{ fontSize: "0.52rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                    New arrivals · Spring 2025
+                  </div>
+                  <h2 className="font-bold leading-tight" style={{ fontSize: "1.05rem", lineHeight: 1.2, color: "#0f1f14" }}>
                     Plants that make<br />
-                    <span style={{ color: "#4a9b6f" }}>
+                    <span style={{ color: "#3a7d55" }}>
                       {typed}
                       <span
                         style={{
                           display: "inline-block",
                           width: "1px",
                           height: "0.9em",
-                          background: "#4a9b6f",
+                          background: "#3a7d55",
                           marginLeft: "1px",
                           verticalAlign: "text-bottom",
                           animation: "blink 1s step-end infinite",
@@ -178,48 +181,63 @@ export default function HeroVisual() {
                       />
                     </span>
                   </h2>
-                  <p style={{ fontSize: "0.58rem", color: "#5a6e5f", lineHeight: 1.5, maxWidth: "90%" }}>
-                    Curated indoor &amp; outdoor plants, delivered fresh from our Oregon greenhouses. Every order includes a care guide.
+                  <p style={{ fontSize: "0.57rem", color: "#6b7e6f", lineHeight: 1.6, maxWidth: "92%" }}>
+                    Curated indoor &amp; outdoor plants, delivered fresh from our Oregon greenhouses.
                   </p>
                   <div className="flex items-center gap-3">
                     <span
                       className="font-semibold text-white"
-                      style={{ background: "#2d6a4f", fontSize: "0.6rem", borderRadius: "6px", padding: "5px 10px", letterSpacing: "0.02em" }}
+                      style={{ background: "#1a2e20", fontSize: "0.57rem", borderRadius: "5px", padding: "5px 11px", letterSpacing: "0.04em" }}
                     >
                       View Collection
                     </span>
-                    <span style={{ color: "#4a9b6f", fontSize: "0.58rem", textDecoration: "underline", textUnderlineOffset: "2px" }}>
-                      Browse 200+ varieties
+                    <span style={{ color: "#3a7d55", fontSize: "0.55rem", borderBottom: "1px solid #3a7d5580", paddingBottom: "1px" }}>
+                      200+ varieties
                     </span>
                   </div>
                 </div>
 
+                {/* Product card — photo treatment */}
                 <div
-                  className="flex-shrink-0 flex flex-col items-center justify-center rounded-2xl"
-                  style={{ width: "130px", background: "#d4edda", border: "1px solid #a8d5b5", padding: "14px 10px", gap: "6px" }}
+                  className="flex-shrink-0 rounded-xl overflow-hidden"
+                  style={{ width: "120px", border: "1px solid #d8e8dc" }}
                 >
-                  <div style={{ fontSize: "3.5rem", lineHeight: 1 }}>🪴</div>
-                  <div className="font-semibold text-center" style={{ fontSize: "0.6rem", color: "#1a2e1f" }}>Monstera Deliciosa</div>
-                  <div style={{ fontSize: "0.55rem", color: "#4a9b6f" }}>Easy care · Low light</div>
-                  <div className="font-bold" style={{ fontSize: "0.7rem", color: "#2d6a4f", marginTop: "2px" }}>$34</div>
+                  <div
+                    style={{
+                      height: "80px",
+                      background: "linear-gradient(160deg, #c8e6c9 0%, #a5d6a7 40%, #2d6a4f 100%)",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      justifyContent: "center",
+                      padding: "0 8px 6px",
+                    }}
+                  >
+                    {/* Simplified leaf silhouette */}
+                    <svg width="38" height="52" viewBox="0 0 38 52" fill="none">
+                      <path d="M19 50 C19 50 2 36 2 20 C2 10 10 2 19 2 C28 2 36 10 36 20 C36 36 19 50 19 50Z" fill="#1a3d25" opacity="0.85"/>
+                      <path d="M19 50 C19 50 8 34 10 22 C12 14 15 8 19 6" stroke="#2d6a4f" strokeWidth="0.8" fill="none"/>
+                      <path d="M19 50 C19 50 30 34 28 22 C26 14 23 8 19 6" stroke="#2d6a4f" strokeWidth="0.8" fill="none"/>
+                      <path d="M19 6 L19 50" stroke="#1a3d25" strokeWidth="0.7" opacity="0.5"/>
+                      <rect x="17" y="48" width="4" height="4" rx="1" fill="#6b4c2a"/>
+                    </svg>
+                  </div>
+                  <div style={{ background: "white", padding: "7px 8px" }}>
+                    <div className="font-semibold" style={{ fontSize: "0.55rem", color: "#0f1f14", lineHeight: 1.3 }}>Monstera Deliciosa</div>
+                    <div style={{ fontSize: "0.5rem", color: "#8a9e8e", marginTop: "2px" }}>Low light · Easy care</div>
+                    <div className="font-bold" style={{ fontSize: "0.65rem", color: "#1a2e20", marginTop: "4px" }}>$34</div>
+                  </div>
                 </div>
               </div>
 
               {/* Category strip */}
-              <div className="grid grid-cols-4 gap-1.5 px-5 pb-4">
-                {[
-                  { icon: "🌵", label: "Succulents" },
-                  { icon: "🌸", label: "Flowering" },
-                  { icon: "🌿", label: "Tropicals" },
-                  { icon: "🪴", label: "Pots & Soil" },
-                ].map((cat) => (
+              <div className="flex gap-2 px-5 pb-4">
+                {["Tropicals", "Succulents", "Flowering", "Pots & Soil"].map((label) => (
                   <div
-                    key={cat.label}
-                    className="flex flex-col items-center rounded-xl py-2 gap-1"
-                    style={{ background: "white", border: "1px solid #d4edda" }}
+                    key={label}
+                    className="flex-1 flex items-center justify-center rounded-lg py-1.5"
+                    style={{ background: "white", border: "1px solid #ddeae0" }}
                   >
-                    <span style={{ fontSize: "0.9rem" }}>{cat.icon}</span>
-                    <span style={{ fontSize: "0.5rem", color: "#2d6a4f", fontWeight: 600 }}>{cat.label}</span>
+                    <span style={{ fontSize: "0.48rem", color: "#2d6a4f", fontWeight: 600, letterSpacing: "0.03em" }}>{label}</span>
                   </div>
                 ))}
               </div>
