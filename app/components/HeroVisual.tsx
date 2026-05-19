@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const metrics = [
   { label: "Traffic", value: "+70%", color: "#4a9b6f" },
@@ -197,34 +198,18 @@ export default function HeroVisual() {
                   </div>
                 </div>
 
-                {/* Product card — photo treatment */}
+                {/* Product card */}
                 <div
                   className="flex-shrink-0 rounded-xl overflow-hidden"
                   style={{ width: "120px", border: "1px solid #d8e8dc" }}
                 >
-                  <div
-                    style={{
-                      height: "80px",
-                      background: "linear-gradient(160deg, #c8e6c9 0%, #a5d6a7 40%, #2d6a4f 100%)",
-                      display: "flex",
-                      alignItems: "flex-end",
-                      justifyContent: "center",
-                      padding: "0 8px 6px",
-                    }}
-                  >
-                    {/* Simplified leaf silhouette */}
-                    <svg width="38" height="52" viewBox="0 0 38 52" fill="none">
-                      <path d="M19 50 C19 50 2 36 2 20 C2 10 10 2 19 2 C28 2 36 10 36 20 C36 36 19 50 19 50Z" fill="#1a3d25" opacity="0.85"/>
-                      <path d="M19 50 C19 50 8 34 10 22 C12 14 15 8 19 6" stroke="#2d6a4f" strokeWidth="0.8" fill="none"/>
-                      <path d="M19 50 C19 50 30 34 28 22 C26 14 23 8 19 6" stroke="#2d6a4f" strokeWidth="0.8" fill="none"/>
-                      <path d="M19 6 L19 50" stroke="#1a3d25" strokeWidth="0.7" opacity="0.5"/>
-                      <rect x="17" y="48" width="4" height="4" rx="1" fill="#6b4c2a"/>
-                    </svg>
+                  <div className="relative" style={{ height: "80px" }}>
+                    <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
                   </div>
                   <div style={{ background: "white", padding: "7px 8px" }}>
-                    <div className="font-semibold" style={{ fontSize: "0.55rem", color: "#0f1f14", lineHeight: 1.3 }}>Monstera Deliciosa</div>
-                    <div style={{ fontSize: "0.5rem", color: "#8a9e8e", marginTop: "2px" }}>Low light · Easy care</div>
-                    <div className="font-bold" style={{ fontSize: "0.65rem", color: "#1a2e20", marginTop: "4px" }}>$34</div>
+                    <div className="font-semibold" style={{ fontSize: "0.55rem", color: "#0f1f14", lineHeight: 1.3 }}>Afterglow Echeveria</div>
+                    <div style={{ fontSize: "0.5rem", color: "#8a9e8e", marginTop: "2px" }}>Full sun · Drought tolerant</div>
+                    <div className="font-bold" style={{ fontSize: "0.65rem", color: "#1a2e20", marginTop: "4px" }}>$28</div>
                   </div>
                 </div>
               </div>
