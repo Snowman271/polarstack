@@ -163,7 +163,7 @@ export default function HeroVisual() {
               <div className="relative w-full overflow-hidden" style={{ height: "170px" }}>
                 <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover object-center" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(247,244,239,0.94) 38%, transparent 75%)" }} />
-                <div className="absolute inset-0 flex flex-col justify-center px-5 gap-1.5">
+                <div className="absolute inset-0 flex flex-col justify-center px-8 gap-1.5">
                   <div style={{ fontSize: "0.48rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                     New arrivals · Spring 2025
                   </div>
