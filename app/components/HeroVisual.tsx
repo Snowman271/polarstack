@@ -175,17 +175,18 @@ export default function HeroVisual() {
                         <span style={{ display: "inline-block", width: "1px", height: "0.9em", background: "#3a7d55", marginLeft: "1px", verticalAlign: "text-bottom", animation: "blink 1s step-end infinite" }} />
                       </span>
                     </h2>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="font-semibold text-white" style={{ background: "#1a2e20", fontSize: "0.52rem", borderRadius: "4px", padding: "4px 9px" }}>
-                        Shop Now
-                      </span>
-                      <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
                     </div>
-                  </div>
                   <div className="absolute bottom-2 right-3 text-right">
                     <div className="font-semibold" style={{ fontSize: "0.52rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>Afterglow Echeveria</div>
                     <div className="font-bold" style={{ fontSize: "0.6rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>$28</div>
                   </div>
+                </div>
+                {/* Buttons below image */}
+                <div className="flex items-center gap-2 px-5 py-3" style={{ borderTop: "1px solid #e8ede9" }}>
+                  <span className="font-semibold text-white" style={{ background: "#1a2e20", fontSize: "0.52rem", borderRadius: "4px", padding: "4px 9px" }}>
+                    Shop Now
+                  </span>
+                  <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
                 </div>
               </div>
 
