@@ -201,7 +201,7 @@ export default function HeroVisual() {
                 {/* Product card */}
                 <div
                   className="flex-shrink-0 rounded-xl overflow-hidden"
-                  style={{ width: "120px", border: "1px solid #d8e8dc" }}
+                  style={{ width: "150px", border: "1px solid #d8e8dc" }}
                 >
                   <div className="relative rounded-t-xl overflow-hidden" style={{ height: "80px" }}>
                     <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
