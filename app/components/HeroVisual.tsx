@@ -160,33 +160,30 @@ export default function HeroVisual() {
               </div>
 
               {/* Hero — full-width image layout */}
-              <div className="relative" style={{ background: "#f7f4ef" }}>
-                <div className="relative w-full overflow-hidden" style={{ height: "170px" }}>
-                  <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(247,244,239,0.92) 38%, transparent 75%)" }} />
-                  <div className="absolute inset-0 flex flex-col justify-center px-5 gap-2">
-                    <div style={{ fontSize: "0.48rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                      New arrivals · Spring 2025
-                    </div>
-                    <h2 className="font-bold" style={{ fontSize: "0.95rem", lineHeight: 1.2, color: "#0f1f14" }}>
-                      Plants that<br />
-                      <span style={{ color: "#3a7d55" }}>
-                        {typed}
-                        <span style={{ display: "inline-block", width: "1px", height: "0.9em", background: "#3a7d55", marginLeft: "1px", verticalAlign: "text-bottom", animation: "blink 1s step-end infinite" }} />
-                      </span>
-                    </h2>
-                    </div>
-                  <div className="absolute bottom-2 right-3 text-right">
-                    <div className="font-semibold" style={{ fontSize: "0.52rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>Afterglow Echeveria</div>
-                    <div className="font-bold" style={{ fontSize: "0.6rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>$28</div>
+              <div className="relative w-full overflow-hidden" style={{ height: "170px" }}>
+                <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover object-center" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(247,244,239,0.94) 38%, transparent 75%)" }} />
+                <div className="absolute inset-0 flex flex-col justify-center px-5 gap-1.5">
+                  <div style={{ fontSize: "0.48rem", color: "#8a9e8e", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                    New arrivals · Spring 2025
+                  </div>
+                  <h2 className="font-bold" style={{ fontSize: "0.95rem", lineHeight: 1.2, color: "#0f1f14" }}>
+                    Plants that<br />
+                    <span style={{ color: "#3a7d55" }}>
+                      {typed}
+                      <span style={{ display: "inline-block", width: "1px", height: "0.9em", background: "#3a7d55", marginLeft: "1px", verticalAlign: "text-bottom", animation: "blink 1s step-end infinite" }} />
+                    </span>
+                  </h2>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="font-semibold text-white" style={{ background: "#1a2e20", fontSize: "0.52rem", borderRadius: "4px", padding: "4px 9px" }}>
+                      Shop Now
+                    </span>
+                    <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
                   </div>
                 </div>
-                {/* Buttons below image */}
-                <div className="flex items-center gap-2 px-5 py-3" style={{ borderTop: "1px solid #e8ede9" }}>
-                  <span className="font-semibold text-white" style={{ background: "#1a2e20", fontSize: "0.52rem", borderRadius: "4px", padding: "4px 9px" }}>
-                    Shop Now
-                  </span>
-                  <span style={{ color: "#3a7d55", fontSize: "0.5rem", borderBottom: "1px solid #3a7d5580" }}>200+ varieties</span>
+                <div className="absolute bottom-2 right-3 text-right">
+                  <div className="font-semibold" style={{ fontSize: "0.52rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>Afterglow Echeveria</div>
+                  <div className="font-bold" style={{ fontSize: "0.6rem", color: "white", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>$28</div>
                 </div>
               </div>
 
