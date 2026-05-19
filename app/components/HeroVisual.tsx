@@ -203,7 +203,7 @@ export default function HeroVisual() {
                   className="flex-shrink-0 rounded-xl overflow-hidden"
                   style={{ width: "120px", border: "1px solid #d8e8dc" }}
                 >
-                  <div className="relative" style={{ height: "80px" }}>
+                  <div className="relative rounded-t-xl overflow-hidden" style={{ height: "80px" }}>
                     <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
                   </div>
                   <div style={{ background: "white", padding: "7px 8px" }}>
