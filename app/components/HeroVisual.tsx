@@ -161,7 +161,7 @@ export default function HeroVisual() {
 
               {/* Hero — full-width image layout */}
               <div className="relative" style={{ background: "#f7f4ef" }}>
-                <div className="relative w-full overflow-hidden" style={{ height: "160px" }}>
+                <div className="relative w-full overflow-hidden" style={{ height: "170px" }}>
                   <Image src="/everglow.jpg" alt="Afterglow Echeveria" fill className="object-cover" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(247,244,239,0.92) 38%, transparent 75%)" }} />
                   <div className="absolute inset-0 flex flex-col justify-center px-5 gap-2">
@@ -190,7 +190,7 @@ export default function HeroVisual() {
               </div>
 
               {/* Category strip */}
-              <div className="flex gap-2 px-5 pb-4">
+              <div className="flex gap-2 px-5 pt-3 pb-4">
                 {["Tropicals", "Succulents", "Flowering", "Pots & Soil"].map((label) => (
                   <div
                     key={label}
