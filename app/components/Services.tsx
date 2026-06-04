@@ -115,8 +115,7 @@ export default function Services() {
               Services
             </h2>
             <p className="mt-4 text-slate-400 max-w-lg text-lg mx-auto lg:mx-0">
-              Projects start at <span className="text-white font-medium">$2,000</span>. Add-ons
-              are scoped per project - just ask.
+              Support plans from <span className="text-white font-medium">$399/mo</span>. Every build is scoped to your project — just ask.
             </p>
           </div>
           <button
