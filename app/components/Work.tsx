@@ -15,7 +15,7 @@ const projects = [
     accent: "#00B4D8",
     year: "2025",
     href: "https://www.ironwoodsrentals.com",
-    screenshot: "/screenshot-ironwoodsrentals.jpg",
+    screenshot: "/1.png",
     metrics: [
       { label: "Load Time", value: "0.8s" },
       { label: "Lighthouse", value: "96" },
@@ -32,7 +32,7 @@ const projects = [
     accent: "#F59E0B",
     year: "2025",
     href: "https://desertironwoods.com",
-    screenshot: "/screenshot-desertironwoods.jpg",
+    screenshot: "/2.png",
     metrics: [
       { label: "Load Time", value: "0.7s" },
       { label: "Lighthouse", value: "94" },
@@ -49,7 +49,7 @@ const projects = [
     accent: "#818CF8",
     year: "2025",
     href: "https://polarsentry.com",
-    screenshot: "/screenshot-polarsentry.jpg",
+    screenshot: "/3.png",
     metrics: [
       { label: "Response", value: "42ms" },
       { label: "Uptime", value: "99.9%" },
