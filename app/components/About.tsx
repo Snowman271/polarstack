@@ -27,7 +27,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="relative py-14 lg:py-32 px-5 sm:px-6 lg:px-12">
+    <section id="about" className="relative py-20 lg:py-32 px-5 sm:px-6 lg:px-12">
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px"
         style={{
@@ -50,7 +50,6 @@ export default function About() {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-center lg:text-left"
           >
             <span className="text-xs font-medium text-[#3DDCB0] tracking-widest uppercase">
               Who we are
@@ -94,6 +93,7 @@ export default function About() {
                   transition={{ delay: 0.25 + i * 0.1, duration: 0.6 }}
                   className="glass glass-hover rounded-2xl p-6 flex gap-4"
                 >
+                  
                   <div className="w-10 h-10 rounded-xl bg-[rgba(61,220,176,0.08)] border border-[rgba(61,220,176,0.12)] flex items-center justify-center flex-shrink-0">
                     <Icon size={18} className="text-[#3DDCB0]" />
                   </div>

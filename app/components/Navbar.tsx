@@ -117,7 +117,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop links — centered */}
-            <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+            <nav className="hidden min-[1085px]:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link) => {
                 const id = link.href.replace("#", "");
                 const isActive = activeSection === id;
@@ -184,7 +184,7 @@ export default function Navbar() {
             </nav>
 
             {/* CTA + theme toggle */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden min-[1085px]:flex items-center gap-3">
               <div className="relative group">
                 <motion.button
                   onClick={toggleTheme}
@@ -226,7 +226,7 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <button
-              className="md:hidden text-slate-400 hover:text-white transition-colors p-1"
+              className="min-[1085px]:hidden text-slate-400 hover:text-white transition-colors p-1"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}

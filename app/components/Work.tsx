@@ -15,6 +15,7 @@ const projects = [
     accent: "#00B4D8",
     year: "2025",
     href: "https://www.ironwoodsrentals.com",
+    screenshot: "/screenshot-ironwoodsrentals.jpg",
     metrics: [
       { label: "Load Time", value: "0.8s" },
       { label: "Lighthouse", value: "96" },
@@ -31,6 +32,7 @@ const projects = [
     accent: "#F59E0B",
     year: "2025",
     href: "https://desertironwoods.com",
+    screenshot: "/screenshot-desertironwoods.jpg",
     metrics: [
       { label: "Load Time", value: "0.7s" },
       { label: "Lighthouse", value: "94" },
@@ -47,6 +49,7 @@ const projects = [
     accent: "#818CF8",
     year: "2025",
     href: "https://polarsentry.com",
+    screenshot: "/screenshot-polarsentry.jpg",
     metrics: [
       { label: "Response", value: "42ms" },
       { label: "Uptime", value: "99.9%" },
@@ -271,11 +274,10 @@ export default function Work() {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={`https://api.microlink.io/?url=${encodeURIComponent(active.href)}&screenshot=true&meta=false&embed=screenshot.url`}
+                      src={active.screenshot}
                       alt={active.title}
                       fill
                       className="object-cover object-top"
-                      unoptimized
                     />
                   </motion.div>
                 </AnimatePresence>
@@ -333,11 +335,10 @@ export default function Work() {
                 {/* Screenshot */}
                 <div className="relative h-44 bg-[#060d14]">
                   <Image
-                    src={`https://api.microlink.io/?url=${encodeURIComponent(project.href)}&screenshot=true&meta=false&embed=screenshot.url`}
+                    src={project.screenshot}
                     alt={project.title}
                     fill
                     className="object-cover object-top"
-                    unoptimized
                   />
                 </div>
 
